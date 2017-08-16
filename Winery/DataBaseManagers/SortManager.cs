@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using Winery.Instanses;
 
 namespace Winery.DataBaseManagers
@@ -17,7 +15,7 @@ namespace Winery.DataBaseManagers
         #endregion
 
         #region I_DB_MANAGABLE
-        public void DeleteData(GrapeSort data)
+        public void DeleteData(int id)
         {
 
         }
@@ -31,10 +29,18 @@ namespace Winery.DataBaseManagers
             ExecuteCommand(queryString);
             while (reader.Read())
                 result.Add(new GrapeSort(reader));
+            reader.Close();
             return result;
         }
         public void LoadData(GrapeSort data)
         {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = string.Format(@"insert into GrapeSort (Id, Name, Sugar, Acidity, OriginCountry, 
+Taste, Seedlessness, AverageBerryWeight) values ({0}, '{1}', {2}, {3}, {4}, '{5}', {6}, {7})",
+data.Id, data.Name, data.Sugar, data.Acidity, data.OriginCountry, data.Taste, data.Seedlessness, data.AverageBerrySize);
+            command.Connection = connection;
+            command.CommandType = CommandType.Text;
+            command.ExecuteNonQuery();
         }
         #endregion
     }

@@ -46,22 +46,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\AddCountryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\AddCountryForm.Designer.cs">
+      <DependentUpon>AddCountryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainFormData.cs">
+    <Compile Include="Forms\AddGrapeSortForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainFormMethods.cs">
+    <Compile Include="Forms\AddGrapeSortForm.Designer.cs">
+      <DependentUpon>AddGrapeSortForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddSeedlessnessTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSeedlessnessTypeForm.Designer.cs">
+      <DependentUpon>AddSeedlessnessTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddSweetnessTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSweetnessTypeForm.Designer.cs">
+      <DependentUpon>AddSweetnessTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddWineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddWineForm.Designer.cs">
+      <DependentUpon>AddWineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddWineSortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddWineSortForm.Designer.cs">
+      <DependentUpon>AddWineSortForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\MainFormData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\MainFormMethods.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddCountryForm.resx">
+      <DependentUpon>AddCountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddGrapeSortForm.resx">
+      <DependentUpon>AddGrapeSortForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSeedlessnessTypeForm.resx">
+      <DependentUpon>AddSeedlessnessTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSweetnessTypeForm.resx">
+      <DependentUpon>AddSweetnessTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddWineForm.resx">
+      <DependentUpon>AddWineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddWineSortForm.resx">
+      <DependentUpon>AddWineSortForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

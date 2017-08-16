@@ -46,16 +46,16 @@
             this.DeletSweetnessTypeButton = new System.Windows.Forms.Button();
             this.SweetnessTable = new System.Windows.Forms.DataGridView();
             this.SeedlessnessTypes = new System.Windows.Forms.TabPage();
-            this.OriginCountry = new System.Windows.Forms.TabPage();
-            this.WineSortTypes = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AddSeedlessnessTypeButton = new System.Windows.Forms.Button();
+            this.DleteSeedlessnessButton = new System.Windows.Forms.Button();
             this.SeedlessnessTable = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.OriginCountry = new System.Windows.Forms.TabPage();
+            this.AddCountryButton = new System.Windows.Forms.Button();
+            this.DeleteCountryButton = new System.Windows.Forms.Button();
             this.CountryTable = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.WineSortTypes = new System.Windows.Forms.TabPage();
+            this.AddWineSortButton = new System.Windows.Forms.Button();
+            this.DeleteWineSortButton = new System.Windows.Forms.Button();
             this.WineSortTable = new System.Windows.Forms.DataGridView();
             this.WineTabs.SuspendLayout();
             this.WineTab.SuspendLayout();
@@ -65,10 +65,10 @@
             this.SweetnessTypes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SweetnessTable)).BeginInit();
             this.SeedlessnessTypes.SuspendLayout();
-            this.OriginCountry.SuspendLayout();
-            this.WineSortTypes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeedlessnessTable)).BeginInit();
+            this.OriginCountry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CountryTable)).BeginInit();
+            this.WineSortTypes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WineSortTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +118,7 @@
             this.DeleteWineButton.TabIndex = 3;
             this.DeleteWineButton.Text = "Удалить";
             this.DeleteWineButton.UseVisualStyleBackColor = true;
+            this.DeleteWineButton.Click += new System.EventHandler(this.DeleteWineButton_Click);
             // 
             // EditWineButton
             // 
@@ -136,6 +137,7 @@
             this.AddWineButton.TabIndex = 1;
             this.AddWineButton.Text = "Добавить";
             this.AddWineButton.UseVisualStyleBackColor = true;
+            this.AddWineButton.Click += new System.EventHandler(this.AddWineButton_Click);
             // 
             // WineTable
             // 
@@ -195,6 +197,7 @@
             this.AddSortButton.TabIndex = 2;
             this.AddSortButton.Text = "Добавить";
             this.AddSortButton.UseVisualStyleBackColor = true;
+            this.AddSortButton.Click += new System.EventHandler(this.AddSortButton_Click);
             // 
             // SortTable
             // 
@@ -224,6 +227,7 @@
             this.AddSweetnessTypeButton.TabIndex = 4;
             this.AddSweetnessTypeButton.Text = "Добавить";
             this.AddSweetnessTypeButton.UseVisualStyleBackColor = true;
+            this.AddSweetnessTypeButton.Click += new System.EventHandler(this.AddSweetnessTypeButton_Click);
             // 
             // DeletSweetnessTypeButton
             // 
@@ -244,8 +248,8 @@
             // 
             // SeedlessnessTypes
             // 
-            this.SeedlessnessTypes.Controls.Add(this.button1);
-            this.SeedlessnessTypes.Controls.Add(this.button2);
+            this.SeedlessnessTypes.Controls.Add(this.AddSeedlessnessTypeButton);
+            this.SeedlessnessTypes.Controls.Add(this.DleteSeedlessnessButton);
             this.SeedlessnessTypes.Controls.Add(this.SeedlessnessTable);
             this.SeedlessnessTypes.Location = new System.Drawing.Point(4, 22);
             this.SeedlessnessTypes.Name = "SeedlessnessTypes";
@@ -254,47 +258,24 @@
             this.SeedlessnessTypes.Text = "Типы семянистости";
             this.SeedlessnessTypes.UseVisualStyleBackColor = true;
             // 
-            // OriginCountry
+            // AddSeedlessnessTypeButton
             // 
-            this.OriginCountry.Controls.Add(this.button3);
-            this.OriginCountry.Controls.Add(this.button4);
-            this.OriginCountry.Controls.Add(this.CountryTable);
-            this.OriginCountry.Location = new System.Drawing.Point(4, 22);
-            this.OriginCountry.Name = "OriginCountry";
-            this.OriginCountry.Size = new System.Drawing.Size(769, 361);
-            this.OriginCountry.TabIndex = 4;
-            this.OriginCountry.Text = "Страна происхождения сорта";
-            this.OriginCountry.UseVisualStyleBackColor = true;
+            this.AddSeedlessnessTypeButton.Location = new System.Drawing.Point(0, 3);
+            this.AddSeedlessnessTypeButton.Name = "AddSeedlessnessTypeButton";
+            this.AddSeedlessnessTypeButton.Size = new System.Drawing.Size(97, 36);
+            this.AddSeedlessnessTypeButton.TabIndex = 7;
+            this.AddSeedlessnessTypeButton.Text = "Добавить";
+            this.AddSeedlessnessTypeButton.UseVisualStyleBackColor = true;
+            this.AddSeedlessnessTypeButton.Click += new System.EventHandler(this.AddSeedlessnessTypeButton_Click);
             // 
-            // WineSortTypes
+            // DleteSeedlessnessButton
             // 
-            this.WineSortTypes.Controls.Add(this.button5);
-            this.WineSortTypes.Controls.Add(this.button6);
-            this.WineSortTypes.Controls.Add(this.WineSortTable);
-            this.WineSortTypes.Location = new System.Drawing.Point(4, 22);
-            this.WineSortTypes.Name = "WineSortTypes";
-            this.WineSortTypes.Size = new System.Drawing.Size(769, 361);
-            this.WineSortTypes.TabIndex = 5;
-            this.WineSortTypes.Text = "Сортовость вина";
-            this.WineSortTypes.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 36);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(103, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 36);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Удалить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DleteSeedlessnessButton.Location = new System.Drawing.Point(103, 3);
+            this.DleteSeedlessnessButton.Name = "DleteSeedlessnessButton";
+            this.DleteSeedlessnessButton.Size = new System.Drawing.Size(97, 36);
+            this.DleteSeedlessnessButton.TabIndex = 6;
+            this.DleteSeedlessnessButton.Text = "Удалить";
+            this.DleteSeedlessnessButton.UseVisualStyleBackColor = true;
             // 
             // SeedlessnessTable
             // 
@@ -304,23 +285,36 @@
             this.SeedlessnessTable.Size = new System.Drawing.Size(772, 270);
             this.SeedlessnessTable.TabIndex = 5;
             // 
-            // button3
+            // OriginCountry
             // 
-            this.button3.Location = new System.Drawing.Point(0, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 36);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Добавить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.OriginCountry.Controls.Add(this.AddCountryButton);
+            this.OriginCountry.Controls.Add(this.DeleteCountryButton);
+            this.OriginCountry.Controls.Add(this.CountryTable);
+            this.OriginCountry.Location = new System.Drawing.Point(4, 22);
+            this.OriginCountry.Name = "OriginCountry";
+            this.OriginCountry.Size = new System.Drawing.Size(769, 361);
+            this.OriginCountry.TabIndex = 4;
+            this.OriginCountry.Text = "Страна происхождения сорта";
+            this.OriginCountry.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // AddCountryButton
             // 
-            this.button4.Location = new System.Drawing.Point(103, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 36);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Удалить";
-            this.button4.UseVisualStyleBackColor = true;
+            this.AddCountryButton.Location = new System.Drawing.Point(0, 3);
+            this.AddCountryButton.Name = "AddCountryButton";
+            this.AddCountryButton.Size = new System.Drawing.Size(97, 36);
+            this.AddCountryButton.TabIndex = 7;
+            this.AddCountryButton.Text = "Добавить";
+            this.AddCountryButton.UseVisualStyleBackColor = true;
+            this.AddCountryButton.Click += new System.EventHandler(this.AddCountryButton_Click);
+            // 
+            // DeleteCountryButton
+            // 
+            this.DeleteCountryButton.Location = new System.Drawing.Point(103, 3);
+            this.DeleteCountryButton.Name = "DeleteCountryButton";
+            this.DeleteCountryButton.Size = new System.Drawing.Size(97, 36);
+            this.DeleteCountryButton.TabIndex = 6;
+            this.DeleteCountryButton.Text = "Удалить";
+            this.DeleteCountryButton.UseVisualStyleBackColor = true;
             // 
             // CountryTable
             // 
@@ -330,23 +324,36 @@
             this.CountryTable.Size = new System.Drawing.Size(772, 270);
             this.CountryTable.TabIndex = 5;
             // 
-            // button5
+            // WineSortTypes
             // 
-            this.button5.Location = new System.Drawing.Point(0, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 36);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Добавить";
-            this.button5.UseVisualStyleBackColor = true;
+            this.WineSortTypes.Controls.Add(this.AddWineSortButton);
+            this.WineSortTypes.Controls.Add(this.DeleteWineSortButton);
+            this.WineSortTypes.Controls.Add(this.WineSortTable);
+            this.WineSortTypes.Location = new System.Drawing.Point(4, 22);
+            this.WineSortTypes.Name = "WineSortTypes";
+            this.WineSortTypes.Size = new System.Drawing.Size(769, 361);
+            this.WineSortTypes.TabIndex = 5;
+            this.WineSortTypes.Text = "Сортовость вина";
+            this.WineSortTypes.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // AddWineSortButton
             // 
-            this.button6.Location = new System.Drawing.Point(103, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(97, 36);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Удалить";
-            this.button6.UseVisualStyleBackColor = true;
+            this.AddWineSortButton.Location = new System.Drawing.Point(0, 3);
+            this.AddWineSortButton.Name = "AddWineSortButton";
+            this.AddWineSortButton.Size = new System.Drawing.Size(97, 36);
+            this.AddWineSortButton.TabIndex = 7;
+            this.AddWineSortButton.Text = "Добавить";
+            this.AddWineSortButton.UseVisualStyleBackColor = true;
+            this.AddWineSortButton.Click += new System.EventHandler(this.AddWineSortButton_Click);
+            // 
+            // DeleteWineSortButton
+            // 
+            this.DeleteWineSortButton.Location = new System.Drawing.Point(103, 3);
+            this.DeleteWineSortButton.Name = "DeleteWineSortButton";
+            this.DeleteWineSortButton.Size = new System.Drawing.Size(97, 36);
+            this.DeleteWineSortButton.TabIndex = 6;
+            this.DeleteWineSortButton.Text = "Удалить";
+            this.DeleteWineSortButton.UseVisualStyleBackColor = true;
             // 
             // WineSortTable
             // 
@@ -375,10 +382,10 @@
             this.SweetnessTypes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SweetnessTable)).EndInit();
             this.SeedlessnessTypes.ResumeLayout(false);
-            this.OriginCountry.ResumeLayout(false);
-            this.WineSortTypes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SeedlessnessTable)).EndInit();
+            this.OriginCountry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CountryTable)).EndInit();
+            this.WineSortTypes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WineSortTable)).EndInit();
             this.ResumeLayout(false);
 
@@ -406,14 +413,14 @@
         private System.Windows.Forms.DataGridView SweetnessTable;
         private System.Windows.Forms.Button AddSweetnessTypeButton;
         private System.Windows.Forms.Button DeletSweetnessTypeButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AddSeedlessnessTypeButton;
+        private System.Windows.Forms.Button DleteSeedlessnessButton;
         private System.Windows.Forms.DataGridView SeedlessnessTable;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddCountryButton;
+        private System.Windows.Forms.Button DeleteCountryButton;
         private System.Windows.Forms.DataGridView CountryTable;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button AddWineSortButton;
+        private System.Windows.Forms.Button DeleteWineSortButton;
         private System.Windows.Forms.DataGridView WineSortTable;
     }
 }

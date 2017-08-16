@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using Winery.Instanses;
 
 namespace Winery.DataBaseManagers
@@ -17,7 +16,7 @@ namespace Winery.DataBaseManagers
         #endregion
 
         #region I_DB_MANAGABLE
-        public void DeleteData(OriginCountry data)
+        public void DeleteData(int id)
         {
             throw new NotImplementedException();
         }
@@ -34,12 +33,18 @@ namespace Winery.DataBaseManagers
             ExecuteCommand(queryString);
             while (reader.Read())
                 result.Add(new OriginCountry((int)reader[0], reader[1] as string));
+            reader.Close();
             return result;
         }
 
         public void LoadData(OriginCountry data)
         {
-            throw new NotImplementedException();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.Connection = connection;
+            command.CommandText = string.Format("insert into OriginCountry (Id, Name) values ({0}, '{1}')",
+                                                data.Id, data.Name);
+            command.ExecuteNonQuery();
         }
         #endregion
     }

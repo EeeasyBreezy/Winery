@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Winery.DataBaseManagers
 {
@@ -11,6 +7,6 @@ namespace Winery.DataBaseManagers
         List<T> GetData();
         void LoadData(T data);
         void EditData(T data);
-        void DeleteData(T data);
+        void DeleteData(int id);
     }
 }
