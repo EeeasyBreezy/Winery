@@ -126,6 +126,9 @@
     <EmbeddedResource Include="Forms\AddWineSortForm.resx">
       <DependentUpon>AddWineSortForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditGrapeSortForm.resx">
+      <DependentUpon>EditGrapeSortForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditWineForm.resx">
       <DependentUpon>EditWineForm.cs</DependentUpon>
     </EmbeddedResource>

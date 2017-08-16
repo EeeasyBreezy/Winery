@@ -58,7 +58,6 @@ namespace WineryDatabase
             {
                 int id = Convert.ToInt32(row.Cells[0].Value);
                 WineManager.DeleteData(id);
-                //WineTable.Rows.Remove(row);
                 Wine local = WineList.Find(x => x.Id == id);
                 WineList.Remove(local);
             }
@@ -152,6 +151,28 @@ namespace WineryDatabase
             }
             else
                 MessageBox.Show("Ни одной строки не выбрано", "Ошибка!", MessageBoxButtons.OK);
+        }
+
+        private void EditSortButton_Click(object sender, EventArgs e)
+        {
+            if(GrapeSortTable.SelectedRows.Count > 0)
+            {
+                EditGrapeSortForm form = new EditGrapeSortForm();
+                form.SortToEdit = (from s in GrapeSortList
+                                   where s.Id == Convert.ToInt32(GrapeSortTable.SelectedRows[0].Cells[0].Value)
+                                   select s).ToList()[0];
+                form.IdTextBox.Text = form.SortToEdit.Id.ToString();
+                form.SortNameTextBox.Text = form.SortToEdit.Name;
+                form.SugarTextBox.Text = form.SortToEdit.Sugar.ToString();
+                form.AcidityTextBox.Text = form.SortToEdit.Acidity.ToString();
+                form.CountryTextBox.Text = form.SortToEdit.OriginCountry.ToString();
+                form.TasteTexBox.Text = form.SortToEdit.Taste;
+                form.SeedlessnessTextBox.Text = form.SortToEdit.Seedlessness.ToString();
+                form.AvgWeightTextBox.Text = form.SortToEdit.AverageBerrySize.ToString();
+                form.ShowDialog();
+            }
+            else
+                MessageBox.Show("Ни одной строки не выбрано!", "Ошибка!", MessageBoxButtons.OK);
         }
     }
 }

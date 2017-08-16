@@ -190,6 +190,7 @@
             this.EditSortButton.TabIndex = 3;
             this.EditSortButton.Text = "Редактировать";
             this.EditSortButton.UseVisualStyleBackColor = true;
+            this.EditSortButton.Click += new System.EventHandler(this.EditSortButton_Click);
             // 
             // AddSortButton
             // 
