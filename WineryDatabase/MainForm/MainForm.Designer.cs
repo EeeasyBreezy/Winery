@@ -57,6 +57,10 @@
             this.AddWineSortButton = new System.Windows.Forms.Button();
             this.DeleteWineSortButton = new System.Windows.Forms.Button();
             this.WineSortTable = new System.Windows.Forms.DataGridView();
+            this.SearchPage = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.WineTabs.SuspendLayout();
             this.WineTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WineTable)).BeginInit();
@@ -70,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CountryTable)).BeginInit();
             this.WineSortTypes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WineSortTable)).BeginInit();
+            this.SearchPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // WineTabs
@@ -80,6 +86,7 @@
             this.WineTabs.Controls.Add(this.SeedlessnessTypes);
             this.WineTabs.Controls.Add(this.OriginCountry);
             this.WineTabs.Controls.Add(this.WineSortTypes);
+            this.WineTabs.Controls.Add(this.SearchPage);
             this.WineTabs.Location = new System.Drawing.Point(6, 20);
             this.WineTabs.Name = "WineTabs";
             this.WineTabs.SelectedIndex = 0;
@@ -103,7 +110,7 @@
             // 
             // FilterWineButton
             // 
-            this.FilterWineButton.Location = new System.Drawing.Point(309, 3);
+            this.FilterWineButton.Location = new System.Drawing.Point(103, 45);
             this.FilterWineButton.Name = "FilterWineButton";
             this.FilterWineButton.Size = new System.Drawing.Size(97, 36);
             this.FilterWineButton.TabIndex = 4;
@@ -113,7 +120,7 @@
             // 
             // DeleteWineButton
             // 
-            this.DeleteWineButton.Location = new System.Drawing.Point(206, 3);
+            this.DeleteWineButton.Location = new System.Drawing.Point(0, 45);
             this.DeleteWineButton.Name = "DeleteWineButton";
             this.DeleteWineButton.Size = new System.Drawing.Size(97, 36);
             this.DeleteWineButton.TabIndex = 3;
@@ -170,7 +177,7 @@
             // 
             // SearchSortButton
             // 
-            this.SearchSortButton.Location = new System.Drawing.Point(309, 3);
+            this.SearchSortButton.Location = new System.Drawing.Point(103, 45);
             this.SearchSortButton.Name = "SearchSortButton";
             this.SearchSortButton.Size = new System.Drawing.Size(97, 36);
             this.SearchSortButton.TabIndex = 5;
@@ -179,7 +186,7 @@
             // 
             // RemoveSortButton
             // 
-            this.RemoveSortButton.Location = new System.Drawing.Point(206, 3);
+            this.RemoveSortButton.Location = new System.Drawing.Point(0, 45);
             this.RemoveSortButton.Name = "RemoveSortButton";
             this.RemoveSortButton.Size = new System.Drawing.Size(97, 36);
             this.RemoveSortButton.TabIndex = 4;
@@ -390,6 +397,48 @@
             this.WineSortTable.Size = new System.Drawing.Size(772, 270);
             this.WineSortTable.TabIndex = 5;
             // 
+            // SearchPage
+            // 
+            this.SearchPage.Controls.Add(this.button2);
+            this.SearchPage.Controls.Add(this.button1);
+            this.SearchPage.Controls.Add(this.dataGridView1);
+            this.SearchPage.Location = new System.Drawing.Point(4, 22);
+            this.SearchPage.Name = "SearchPage";
+            this.SearchPage.Size = new System.Drawing.Size(769, 361);
+            this.SearchPage.TabIndex = 6;
+            this.SearchPage.Text = "Поиск по БД";
+            this.SearchPage.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-3, 91);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(772, 270);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Вина с ценой выше среднего";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 45);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(137, 40);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Сорта винограда с сахаристостью выше среднего";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,6 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CountryTable)).EndInit();
             this.WineSortTypes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WineSortTable)).EndInit();
+            this.SearchPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,6 +500,10 @@
         private System.Windows.Forms.Button AddWineSortButton;
         private System.Windows.Forms.Button DeleteWineSortButton;
         private System.Windows.Forms.DataGridView WineSortTable;
+        private System.Windows.Forms.TabPage SearchPage;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
