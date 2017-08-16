@@ -17,7 +17,12 @@ namespace Winery.DataBaseManagers
         #region I_DB_MANAGABLE
         public void DeleteData(int id)
         {
-
+            SqlCommand command = new SqlCommand();
+            command.CommandText = string.Format("delete from GrapeSort where Id = {0}", id);
+            command.CommandType = CommandType.Text;
+            command.Connection = connection;
+            command.ExecuteNonQuery();
+            command.Dispose();
         }
         public void EditData(GrapeSort data)
         {
@@ -41,6 +46,7 @@ data.Id, data.Name, data.Sugar, data.Acidity, data.OriginCountry, data.Taste, da
             command.Connection = connection;
             command.CommandType = CommandType.Text;
             command.ExecuteNonQuery();
+            command.Dispose();
         }
         #endregion
     }

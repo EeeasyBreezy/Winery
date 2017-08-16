@@ -82,6 +82,18 @@
     <Compile Include="Forms\AddWineSortForm.Designer.cs">
       <DependentUpon>AddWineSortForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditGrapeSortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditGrapeSortForm.Designer.cs">
+      <DependentUpon>EditGrapeSortForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditWineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditWineForm.Designer.cs">
+      <DependentUpon>EditWineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddWineSortForm.resx">
       <DependentUpon>AddWineSortForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditWineForm.resx">
+      <DependentUpon>EditWineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

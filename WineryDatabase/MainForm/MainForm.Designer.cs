@@ -40,7 +40,7 @@
             this.RemoveSortButton = new System.Windows.Forms.Button();
             this.EditSortButton = new System.Windows.Forms.Button();
             this.AddSortButton = new System.Windows.Forms.Button();
-            this.SortTable = new System.Windows.Forms.DataGridView();
+            this.GrapeSortTable = new System.Windows.Forms.DataGridView();
             this.SweetnessTypes = new System.Windows.Forms.TabPage();
             this.AddSweetnessTypeButton = new System.Windows.Forms.Button();
             this.DeletSweetnessTypeButton = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.WineTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WineTable)).BeginInit();
             this.GrapeSorts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SortTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrapeSortTable)).BeginInit();
             this.SweetnessTypes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SweetnessTable)).BeginInit();
             this.SeedlessnessTypes.SuspendLayout();
@@ -128,6 +128,7 @@
             this.EditWineButton.TabIndex = 2;
             this.EditWineButton.Text = "Редактировать";
             this.EditWineButton.UseVisualStyleBackColor = true;
+            this.EditWineButton.Click += new System.EventHandler(this.EditWineButton_Click);
             // 
             // AddWineButton
             // 
@@ -153,7 +154,7 @@
             this.GrapeSorts.Controls.Add(this.RemoveSortButton);
             this.GrapeSorts.Controls.Add(this.EditSortButton);
             this.GrapeSorts.Controls.Add(this.AddSortButton);
-            this.GrapeSorts.Controls.Add(this.SortTable);
+            this.GrapeSorts.Controls.Add(this.GrapeSortTable);
             this.GrapeSorts.Location = new System.Drawing.Point(4, 22);
             this.GrapeSorts.Name = "GrapeSorts";
             this.GrapeSorts.Padding = new System.Windows.Forms.Padding(3);
@@ -179,6 +180,7 @@
             this.RemoveSortButton.TabIndex = 4;
             this.RemoveSortButton.Text = "Удалить";
             this.RemoveSortButton.UseVisualStyleBackColor = true;
+            this.RemoveSortButton.Click += new System.EventHandler(this.RemoveSortButton_Click);
             // 
             // EditSortButton
             // 
@@ -199,13 +201,13 @@
             this.AddSortButton.UseVisualStyleBackColor = true;
             this.AddSortButton.Click += new System.EventHandler(this.AddSortButton_Click);
             // 
-            // SortTable
+            // GrapeSortTable
             // 
-            this.SortTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SortTable.Location = new System.Drawing.Point(0, 95);
-            this.SortTable.Name = "SortTable";
-            this.SortTable.Size = new System.Drawing.Size(772, 270);
-            this.SortTable.TabIndex = 1;
+            this.GrapeSortTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrapeSortTable.Location = new System.Drawing.Point(0, 95);
+            this.GrapeSortTable.Name = "GrapeSortTable";
+            this.GrapeSortTable.Size = new System.Drawing.Size(772, 270);
+            this.GrapeSortTable.TabIndex = 1;
             // 
             // SweetnessTypes
             // 
@@ -237,6 +239,7 @@
             this.DeletSweetnessTypeButton.TabIndex = 3;
             this.DeletSweetnessTypeButton.Text = "Удалить";
             this.DeletSweetnessTypeButton.UseVisualStyleBackColor = true;
+            this.DeletSweetnessTypeButton.Click += new System.EventHandler(this.DeletSweetnessTypeButton_Click);
             // 
             // SweetnessTable
             // 
@@ -276,6 +279,7 @@
             this.DleteSeedlessnessButton.TabIndex = 6;
             this.DleteSeedlessnessButton.Text = "Удалить";
             this.DleteSeedlessnessButton.UseVisualStyleBackColor = true;
+            this.DleteSeedlessnessButton.Click += new System.EventHandler(this.DleteSeedlessnessButton_Click);
             // 
             // SeedlessnessTable
             // 
@@ -315,6 +319,7 @@
             this.DeleteCountryButton.TabIndex = 6;
             this.DeleteCountryButton.Text = "Удалить";
             this.DeleteCountryButton.UseVisualStyleBackColor = true;
+            this.DeleteCountryButton.Click += new System.EventHandler(this.DeleteCountryButton_Click);
             // 
             // CountryTable
             // 
@@ -354,6 +359,7 @@
             this.DeleteWineSortButton.TabIndex = 6;
             this.DeleteWineSortButton.Text = "Удалить";
             this.DeleteWineSortButton.UseVisualStyleBackColor = true;
+            this.DeleteWineSortButton.Click += new System.EventHandler(this.DeleteWineSortButton_Click);
             // 
             // WineSortTable
             // 
@@ -378,7 +384,7 @@
             this.WineTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WineTable)).EndInit();
             this.GrapeSorts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SortTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrapeSortTable)).EndInit();
             this.SweetnessTypes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SweetnessTable)).EndInit();
             this.SeedlessnessTypes.ResumeLayout(false);
@@ -405,7 +411,7 @@
         private System.Windows.Forms.TabPage SeedlessnessTypes;
         private System.Windows.Forms.TabPage OriginCountry;
         private System.Windows.Forms.TabPage WineSortTypes;
-        private System.Windows.Forms.DataGridView SortTable;
+        private System.Windows.Forms.DataGridView GrapeSortTable;
         private System.Windows.Forms.Button AddSortButton;
         private System.Windows.Forms.Button SearchSortButton;
         private System.Windows.Forms.Button RemoveSortButton;

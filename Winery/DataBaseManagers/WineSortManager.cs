@@ -18,10 +18,18 @@ namespace Winery.DataBaseManagers
         #region I_DB_MANAGABLE
         public void DeleteData(int id)
         {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = string.Format("delete from WineSortCategory where Id = {0}", id);
+            command.CommandType = CommandType.Text;
+            command.Connection = connection;
+            command.ExecuteNonQuery();
+            command.Dispose();
         }
 
         public void EditData(WineSortCategory data)
         {
+            SqlCommand command = new SqlCommand();
+
         }
 
         public List<WineSortCategory> GetData()
@@ -43,6 +51,7 @@ namespace Winery.DataBaseManagers
             command.CommandText = string.Format("insert into WineSortCategory (Id, Sort) values ({0}, '{1}')",
                                                 data.Id, data.Sort);
             command.ExecuteNonQuery();
+            command.Dispose();
         }
         #endregion
     }

@@ -18,12 +18,17 @@ namespace Winery.DataBaseManagers
         #region I_DB_MANAGABLE
         public void DeleteData(int id)
         {
-            throw new NotImplementedException();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = string.Format("delete from OriginCountry where Id = {0}", id);
+            command.CommandType = CommandType.Text;
+            command.Connection = connection;
+            command.ExecuteNonQuery();
+            command.Dispose();
         }
 
         public void EditData(OriginCountry data)
         {
-            throw new NotImplementedException();
+
         }
 
         public List<OriginCountry> GetData()
@@ -45,6 +50,7 @@ namespace Winery.DataBaseManagers
             command.CommandText = string.Format("insert into OriginCountry (Id, Name) values ({0}, '{1}')",
                                                 data.Id, data.Name);
             command.ExecuteNonQuery();
+            command.Dispose();
         }
         #endregion
     }

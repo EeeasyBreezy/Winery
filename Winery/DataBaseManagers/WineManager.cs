@@ -39,10 +39,22 @@ GrapeSort, Sweetness, SulfurDioxide, SortCategory) values ({0}, '{1}', '{2}', {3
             data.Id, data.Name, data.NameEng, data.Alcohol, data.Year, data.Price, data.GrapeSort,
             data.Sweetness, data.SulfurDioxide, data.SortCategory);
             command.ExecuteNonQuery();
+            command.Dispose();
         }
 
         public void EditData(Wine data)
         {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = string.Format(@"update Wine set
+Id = {0}, Name = '{1}', NameEng = '{2}', Alcohol = {3}, Year = {4}, Price = {5}, GrapeSort = {6}, Sweetness = {7}, 
+SulfurDioxide = {8}, SortCategory = {9} where Id = {10}", data.Id, data.Name, data.NameEng, 
+data.Alcohol.ToString().Replace(',', '.'),data.Year, data.Price.ToString().Replace(',', '.'), 
+data.GrapeSort.ToString().Replace(',', '.'), data.Sweetness, data.SulfurDioxide.ToString().Replace(',', '.'), 
+data.SortCategory, data.Id);
+            command.CommandType = CommandType.Text;
+            command.Connection = connection;
+            command.ExecuteNonQuery();
+            command.Dispose();
         }
 
         public void DeleteData(int id)
@@ -52,6 +64,7 @@ GrapeSort, Sweetness, SulfurDioxide, SortCategory) values ({0}, '{1}', '{2}', {3
             command.Connection = connection;
             command.CommandType = CommandType.Text;
             command.ExecuteNonQuery();
+            command.Dispose();
         }
         #endregion
     }

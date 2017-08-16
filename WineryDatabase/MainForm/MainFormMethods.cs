@@ -17,12 +17,12 @@ namespace WineryDatabase
         }
         public void UpdateGrapeSortTable()
         {
-            SortTable.DataSource = null;
-            SortTable.Update();
-            SortTable.Refresh();
-            SortTable.DataSource = GrapeSortList;
-            SortTable.Update();
-            SortTable.Refresh();
+            GrapeSortTable.DataSource = null;
+            GrapeSortTable.Update();
+            GrapeSortTable.Refresh();
+            GrapeSortTable.DataSource = GrapeSortList;
+            GrapeSortTable.Update();
+            GrapeSortTable.Refresh();
         }
         public void UpdateSweetnessTypeTable()
         {
@@ -85,7 +85,7 @@ namespace WineryDatabase
             SeedlessnessList = SeedlessnessManager.GetData();
             SortCategoryList = WineSortManager.GetData();
             WineTable.DataSource = WineList;
-            SortTable.DataSource = GrapeSortList;
+            GrapeSortTable.DataSource = GrapeSortList;
             SweetnessTable.DataSource = SweetnessList;
             SeedlessnessTable.DataSource = SeedlessnessList;
             CountryTable.DataSource = CountryList;

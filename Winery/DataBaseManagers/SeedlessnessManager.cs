@@ -18,6 +18,12 @@ namespace Winery.DataBaseManagers
         #region I_DB_MANAGABLE
         public void DeleteData(int id)
         {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = string.Format("delete from SeedlessnessType where Id = {0}", id);
+            command.CommandType = CommandType.Text;
+            command.Connection = connection;
+            command.ExecuteNonQuery();
+            command.Dispose();
         }
 
         public void EditData(SeedlessnessType data)
@@ -43,6 +49,7 @@ namespace Winery.DataBaseManagers
             command.CommandText = string.Format("insert into SeedlessnessType (Id, Type) values ({0}, '{1}')",
                                                 data.Id, data.Type);
             command.ExecuteNonQuery();
+            command.Dispose();
         }
         #endregion
     }
