@@ -174,5 +174,11 @@ namespace WineryDatabase
             else
                 MessageBox.Show("Ни одной строки не выбрано!", "Ошибка!", MessageBoxButtons.OK);
         }
+
+        private void FilterWineButton_Click(object sender, EventArgs e)
+        {
+            FilterForm form = new FilterForm();
+            form.ShowDialog();
+        }
     }
 }
