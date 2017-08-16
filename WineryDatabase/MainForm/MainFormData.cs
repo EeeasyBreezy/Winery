@@ -34,6 +34,8 @@ namespace WineryDatabase
         { get; set; }
         public WineSortManager WineSortManager
         { get; set; }
+        public SearchManager DbSearch
+        { get; set; }
         #endregion
     }
 }

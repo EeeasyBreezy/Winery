@@ -58,9 +58,10 @@
             this.DeleteWineSortButton = new System.Windows.Forms.Button();
             this.WineSortTable = new System.Windows.Forms.DataGridView();
             this.SearchPage = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SearchGrapeSortsSugarAvgAverage = new System.Windows.Forms.Button();
+            this.SearchWinesOverAvgPrice = new System.Windows.Forms.Button();
+            this.SearchTable = new System.Windows.Forms.DataGridView();
+            this.SearchGrapeSortsByCountryButton = new System.Windows.Forms.Button();
             this.WineTabs.SuspendLayout();
             this.WineTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WineTable)).BeginInit();
@@ -75,7 +76,7 @@
             this.WineSortTypes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WineSortTable)).BeginInit();
             this.SearchPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchTable)).BeginInit();
             this.SuspendLayout();
             // 
             // WineTabs
@@ -399,9 +400,10 @@
             // 
             // SearchPage
             // 
-            this.SearchPage.Controls.Add(this.button2);
-            this.SearchPage.Controls.Add(this.button1);
-            this.SearchPage.Controls.Add(this.dataGridView1);
+            this.SearchPage.Controls.Add(this.SearchGrapeSortsByCountryButton);
+            this.SearchPage.Controls.Add(this.SearchGrapeSortsSugarAvgAverage);
+            this.SearchPage.Controls.Add(this.SearchWinesOverAvgPrice);
+            this.SearchPage.Controls.Add(this.SearchTable);
             this.SearchPage.Location = new System.Drawing.Point(4, 22);
             this.SearchPage.Name = "SearchPage";
             this.SearchPage.Size = new System.Drawing.Size(769, 361);
@@ -409,35 +411,47 @@
             this.SearchPage.Text = "Поиск по БД";
             this.SearchPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // SearchGrapeSortsSugarAvgAverage
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-3, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(772, 270);
-            this.dataGridView1.TabIndex = 1;
+            this.SearchGrapeSortsSugarAvgAverage.Location = new System.Drawing.Point(3, 45);
+            this.SearchGrapeSortsSugarAvgAverage.Name = "SearchGrapeSortsSugarAvgAverage";
+            this.SearchGrapeSortsSugarAvgAverage.Size = new System.Drawing.Size(280, 40);
+            this.SearchGrapeSortsSugarAvgAverage.TabIndex = 3;
+            this.SearchGrapeSortsSugarAvgAverage.Text = "Сорта винограда с сахаристостью выше среднего";
+            this.SearchGrapeSortsSugarAvgAverage.UseVisualStyleBackColor = true;
+            this.SearchGrapeSortsSugarAvgAverage.Click += new System.EventHandler(this.SearchGrapeSortsSugarAvgAverage_Click);
             // 
-            // button1
+            // SearchWinesOverAvgPrice
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Вина с ценой выше среднего";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SearchWinesOverAvgPrice.Location = new System.Drawing.Point(3, 3);
+            this.SearchWinesOverAvgPrice.Name = "SearchWinesOverAvgPrice";
+            this.SearchWinesOverAvgPrice.Size = new System.Drawing.Size(137, 40);
+            this.SearchWinesOverAvgPrice.TabIndex = 2;
+            this.SearchWinesOverAvgPrice.Text = "Вина с ценой выше среднего";
+            this.SearchWinesOverAvgPrice.UseVisualStyleBackColor = true;
+            this.SearchWinesOverAvgPrice.Click += new System.EventHandler(this.SearchWinesOverAvgPrice_Click);
             // 
-            // button2
+            // SearchTable
             // 
-            this.button2.Location = new System.Drawing.Point(3, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 40);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Сорта винограда с сахаристостью выше среднего";
-            this.button2.UseVisualStyleBackColor = true;
+            this.SearchTable.AllowUserToAddRows = false;
+            this.SearchTable.AllowUserToDeleteRows = false;
+            this.SearchTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.SearchTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SearchTable.Location = new System.Drawing.Point(-3, 91);
+            this.SearchTable.Name = "SearchTable";
+            this.SearchTable.ReadOnly = true;
+            this.SearchTable.Size = new System.Drawing.Size(772, 270);
+            this.SearchTable.TabIndex = 1;
+            // 
+            // SearchGrapeSortsByCountryButton
+            // 
+            this.SearchGrapeSortsByCountryButton.Location = new System.Drawing.Point(146, 3);
+            this.SearchGrapeSortsByCountryButton.Name = "SearchGrapeSortsByCountryButton";
+            this.SearchGrapeSortsByCountryButton.Size = new System.Drawing.Size(137, 40);
+            this.SearchGrapeSortsByCountryButton.TabIndex = 4;
+            this.SearchGrapeSortsByCountryButton.Text = "Поиск сортов по странам";
+            this.SearchGrapeSortsByCountryButton.UseVisualStyleBackColor = true;
+            this.SearchGrapeSortsByCountryButton.Click += new System.EventHandler(this.SearchGrapeSortsByCountryButton_Click);
             // 
             // MainForm
             // 
@@ -464,7 +478,7 @@
             this.WineSortTypes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WineSortTable)).EndInit();
             this.SearchPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,9 +515,10 @@
         private System.Windows.Forms.Button DeleteWineSortButton;
         private System.Windows.Forms.DataGridView WineSortTable;
         private System.Windows.Forms.TabPage SearchPage;
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView SearchTable;
+        private System.Windows.Forms.Button SearchGrapeSortsSugarAvgAverage;
+        private System.Windows.Forms.Button SearchWinesOverAvgPrice;
+        private System.Windows.Forms.Button SearchGrapeSortsByCountryButton;
     }
 }
 

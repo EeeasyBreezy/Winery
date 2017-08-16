@@ -51,6 +51,7 @@
     <Compile Include="DataBaseManagers\BaseSqlManager.cs" />
     <Compile Include="DataBaseManagers\CountryManager.cs" />
     <Compile Include="DataBaseManagers\IDbManagable.cs" />
+    <Compile Include="DataBaseManagers\SearchManager.cs" />
     <Compile Include="DataBaseManagers\SeedlessnessManager.cs" />
     <Compile Include="DataBaseManagers\SortManager.cs" />
     <Compile Include="DataBaseManagers\SweetnessManager.cs" />

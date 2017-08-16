@@ -75,6 +75,7 @@ namespace WineryDatabase
             SeedlessnessManager = new SeedlessnessManager(builder.ConnectionString);
             SweetnessManager = new SweetnessManager(builder.ConnectionString);
             WineSortManager = new WineSortManager(builder.ConnectionString);
+            DbSearch = new SearchManager(builder.ConnectionString);
         }
         public void LoadAllData()
         {

@@ -180,5 +180,26 @@ namespace WineryDatabase
             FilterForm form = new FilterForm();
             form.ShowDialog();
         }
+
+        private void SearchWinesOverAvgPrice_Click(object sender, EventArgs e)
+        {
+            SearchTable.DataSource = DbSearch.GetWineOverAvgPrice();
+            SearchTable.Update();
+            SearchTable.Refresh();
+        }
+
+        private void SearchGrapeSortsByCountryButton_Click(object sender, EventArgs e)
+        {
+            SearchGrapeSortByCountryForm form = new SearchGrapeSortByCountryForm();
+            form.ShowDialog();
+
+        }
+
+        private void SearchGrapeSortsSugarAvgAverage_Click(object sender, EventArgs e)
+        {
+            SearchTable.DataSource = DbSearch.GetGrapeSortWithSugarOverAvr();
+            SearchTable.Update();
+            SearchTable.Refresh();
+        }
     }
 }
