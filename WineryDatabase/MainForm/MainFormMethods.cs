@@ -66,7 +66,7 @@ namespace WineryDatabase
         private void InitSqlManagers()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "ALEX-ПК\\SQLEXPRESS";
+            builder.DataSource = ServerAddressTextBox.Text;
             builder.InitialCatalog = "WineryDb";
             builder.IntegratedSecurity = true;
             WineManager = new WineManager(builder.ConnectionString);

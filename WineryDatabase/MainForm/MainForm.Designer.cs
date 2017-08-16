@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.WineTabs = new System.Windows.Forms.TabControl();
+            this.SettingsTabPage = new System.Windows.Forms.TabPage();
+            this.ConnecToServerButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ServerAddressTextBox = new System.Windows.Forms.TextBox();
             this.WineTab = new System.Windows.Forms.TabPage();
             this.FilterWineButton = new System.Windows.Forms.Button();
             this.DeleteWineButton = new System.Windows.Forms.Button();
@@ -36,7 +40,6 @@
             this.AddWineButton = new System.Windows.Forms.Button();
             this.WineTable = new System.Windows.Forms.DataGridView();
             this.GrapeSorts = new System.Windows.Forms.TabPage();
-            this.SearchSortButton = new System.Windows.Forms.Button();
             this.RemoveSortButton = new System.Windows.Forms.Button();
             this.EditSortButton = new System.Windows.Forms.Button();
             this.AddSortButton = new System.Windows.Forms.Button();
@@ -58,11 +61,12 @@
             this.DeleteWineSortButton = new System.Windows.Forms.Button();
             this.WineSortTable = new System.Windows.Forms.DataGridView();
             this.SearchPage = new System.Windows.Forms.TabPage();
+            this.SearchGrapeSortsByCountryButton = new System.Windows.Forms.Button();
             this.SearchGrapeSortsSugarAvgAverage = new System.Windows.Forms.Button();
             this.SearchWinesOverAvgPrice = new System.Windows.Forms.Button();
             this.SearchTable = new System.Windows.Forms.DataGridView();
-            this.SearchGrapeSortsByCountryButton = new System.Windows.Forms.Button();
             this.WineTabs.SuspendLayout();
+            this.SettingsTabPage.SuspendLayout();
             this.WineTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WineTable)).BeginInit();
             this.GrapeSorts.SuspendLayout();
@@ -81,6 +85,7 @@
             // 
             // WineTabs
             // 
+            this.WineTabs.Controls.Add(this.SettingsTabPage);
             this.WineTabs.Controls.Add(this.WineTab);
             this.WineTabs.Controls.Add(this.GrapeSorts);
             this.WineTabs.Controls.Add(this.SweetnessTypes);
@@ -93,6 +98,44 @@
             this.WineTabs.SelectedIndex = 0;
             this.WineTabs.Size = new System.Drawing.Size(777, 387);
             this.WineTabs.TabIndex = 0;
+            // 
+            // SettingsTabPage
+            // 
+            this.SettingsTabPage.Controls.Add(this.ConnecToServerButton);
+            this.SettingsTabPage.Controls.Add(this.label1);
+            this.SettingsTabPage.Controls.Add(this.ServerAddressTextBox);
+            this.SettingsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.SettingsTabPage.Name = "SettingsTabPage";
+            this.SettingsTabPage.Size = new System.Drawing.Size(769, 361);
+            this.SettingsTabPage.TabIndex = 7;
+            this.SettingsTabPage.Text = "Настройки";
+            this.SettingsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ConnecToServerButton
+            // 
+            this.ConnecToServerButton.Location = new System.Drawing.Point(347, 3);
+            this.ConnecToServerButton.Name = "ConnecToServerButton";
+            this.ConnecToServerButton.Size = new System.Drawing.Size(112, 20);
+            this.ConnecToServerButton.TabIndex = 2;
+            this.ConnecToServerButton.Text = "Подключиться";
+            this.ConnecToServerButton.UseVisualStyleBackColor = true;
+            this.ConnecToServerButton.Click += new System.EventHandler(this.ConnecToServerButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Адрес SQL сервера";
+            // 
+            // ServerAddressTextBox
+            // 
+            this.ServerAddressTextBox.Location = new System.Drawing.Point(116, 3);
+            this.ServerAddressTextBox.Name = "ServerAddressTextBox";
+            this.ServerAddressTextBox.Size = new System.Drawing.Size(225, 20);
+            this.ServerAddressTextBox.TabIndex = 0;
             // 
             // WineTab
             // 
@@ -163,7 +206,6 @@
             // 
             // GrapeSorts
             // 
-            this.GrapeSorts.Controls.Add(this.SearchSortButton);
             this.GrapeSorts.Controls.Add(this.RemoveSortButton);
             this.GrapeSorts.Controls.Add(this.EditSortButton);
             this.GrapeSorts.Controls.Add(this.AddSortButton);
@@ -175,15 +217,6 @@
             this.GrapeSorts.TabIndex = 1;
             this.GrapeSorts.Text = "Сорта винограда";
             this.GrapeSorts.UseVisualStyleBackColor = true;
-            // 
-            // SearchSortButton
-            // 
-            this.SearchSortButton.Location = new System.Drawing.Point(103, 45);
-            this.SearchSortButton.Name = "SearchSortButton";
-            this.SearchSortButton.Size = new System.Drawing.Size(97, 36);
-            this.SearchSortButton.TabIndex = 5;
-            this.SearchSortButton.Text = "Поиск сорта";
-            this.SearchSortButton.UseVisualStyleBackColor = true;
             // 
             // RemoveSortButton
             // 
@@ -411,6 +444,16 @@
             this.SearchPage.Text = "Поиск по БД";
             this.SearchPage.UseVisualStyleBackColor = true;
             // 
+            // SearchGrapeSortsByCountryButton
+            // 
+            this.SearchGrapeSortsByCountryButton.Location = new System.Drawing.Point(146, 3);
+            this.SearchGrapeSortsByCountryButton.Name = "SearchGrapeSortsByCountryButton";
+            this.SearchGrapeSortsByCountryButton.Size = new System.Drawing.Size(137, 40);
+            this.SearchGrapeSortsByCountryButton.TabIndex = 4;
+            this.SearchGrapeSortsByCountryButton.Text = "Поиск сортов по странам";
+            this.SearchGrapeSortsByCountryButton.UseVisualStyleBackColor = true;
+            this.SearchGrapeSortsByCountryButton.Click += new System.EventHandler(this.SearchGrapeSortsByCountryButton_Click);
+            // 
             // SearchGrapeSortsSugarAvgAverage
             // 
             this.SearchGrapeSortsSugarAvgAverage.Location = new System.Drawing.Point(3, 45);
@@ -443,16 +486,6 @@
             this.SearchTable.Size = new System.Drawing.Size(772, 270);
             this.SearchTable.TabIndex = 1;
             // 
-            // SearchGrapeSortsByCountryButton
-            // 
-            this.SearchGrapeSortsByCountryButton.Location = new System.Drawing.Point(146, 3);
-            this.SearchGrapeSortsByCountryButton.Name = "SearchGrapeSortsByCountryButton";
-            this.SearchGrapeSortsByCountryButton.Size = new System.Drawing.Size(137, 40);
-            this.SearchGrapeSortsByCountryButton.TabIndex = 4;
-            this.SearchGrapeSortsByCountryButton.Text = "Поиск сортов по странам";
-            this.SearchGrapeSortsByCountryButton.UseVisualStyleBackColor = true;
-            this.SearchGrapeSortsByCountryButton.Click += new System.EventHandler(this.SearchGrapeSortsByCountryButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,6 +498,8 @@
             this.Name = "MainForm";
             this.Text = "Винодельня";
             this.WineTabs.ResumeLayout(false);
+            this.SettingsTabPage.ResumeLayout(false);
+            this.SettingsTabPage.PerformLayout();
             this.WineTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WineTable)).EndInit();
             this.GrapeSorts.ResumeLayout(false);
@@ -499,7 +534,6 @@
         private System.Windows.Forms.TabPage WineSortTypes;
         private System.Windows.Forms.DataGridView GrapeSortTable;
         private System.Windows.Forms.Button AddSortButton;
-        private System.Windows.Forms.Button SearchSortButton;
         private System.Windows.Forms.Button RemoveSortButton;
         private System.Windows.Forms.Button EditSortButton;
         private System.Windows.Forms.DataGridView SweetnessTable;
@@ -519,6 +553,10 @@
         private System.Windows.Forms.Button SearchGrapeSortsSugarAvgAverage;
         private System.Windows.Forms.Button SearchWinesOverAvgPrice;
         private System.Windows.Forms.Button SearchGrapeSortsByCountryButton;
+        private System.Windows.Forms.TabPage SettingsTabPage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox ServerAddressTextBox;
+        private System.Windows.Forms.Button ConnecToServerButton;
     }
 }
 

@@ -20,7 +20,13 @@ namespace WineryDatabase.Forms
             foreach (var c in main.CountryList)
                 CountriesComboBox.Items.Add(c.Name);
         }
-
+        public int SelectedCountryId
+        {
+            get
+            {
+                return CountriesComboBox.SelectedIndex;
+            }
+        }
         private void SearchByCountryButton_Click(object sender, EventArgs e)
         {
             Hide();

@@ -2,6 +2,7 @@
 using WineryDatabase.Forms;
 using Winery.Instanses;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace WineryDatabase
@@ -11,8 +12,6 @@ namespace WineryDatabase
         public MainForm()
         {
             InitializeComponent();
-            InitSqlManagers();
-            LoadAllData();
         }
 
         private void AddWineButton_Click(object sender, System.EventArgs e)
@@ -54,7 +53,7 @@ namespace WineryDatabase
         private void DeleteWineButton_Click(object sender, System.EventArgs e)
         {
             var selectedRows = WineTable.SelectedRows;
-            foreach(DataGridViewRow row in selectedRows)
+            foreach (DataGridViewRow row in selectedRows)
             {
                 int id = Convert.ToInt32(row.Cells[0].Value);
                 WineManager.DeleteData(id);
@@ -155,7 +154,7 @@ namespace WineryDatabase
 
         private void EditSortButton_Click(object sender, EventArgs e)
         {
-            if(GrapeSortTable.SelectedRows.Count > 0)
+            if (GrapeSortTable.SelectedRows.Count > 0)
             {
                 EditGrapeSortForm form = new EditGrapeSortForm();
                 form.SortToEdit = (from s in GrapeSortList
@@ -183,23 +182,65 @@ namespace WineryDatabase
 
         private void SearchWinesOverAvgPrice_Click(object sender, EventArgs e)
         {
-            SearchTable.DataSource = DbSearch.GetWineOverAvgPrice();
-            SearchTable.Update();
-            SearchTable.Refresh();
+            try
+            {
+                SearchTable.DataSource = DbSearch.GetWineOverAvgPrice();
+                SearchTable.Update();
+                SearchTable.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK);
+            }
         }
 
         private void SearchGrapeSortsByCountryButton_Click(object sender, EventArgs e)
         {
-            SearchGrapeSortByCountryForm form = new SearchGrapeSortByCountryForm();
-            form.ShowDialog();
-
+            try
+            {
+                SearchGrapeSortByCountryForm form = new SearchGrapeSortByCountryForm();
+                form.ShowDialog();
+                List<GrapeSort> sortsByCountry = DbSearch.GetGrapeSortsByCountry(form.SelectedCountryId);
+                //List<GrapeSort> sortsByCountry = (from s in GrapeSortList
+                //                                  where s.OriginCountry == form.SelectedCountryId
+                //                                  select s).ToList();
+                SearchTable.DataSource = sortsByCountry;
+                SearchTable.Update();
+                SearchTable.Refresh();
+                form.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK);
+            }
         }
 
         private void SearchGrapeSortsSugarAvgAverage_Click(object sender, EventArgs e)
         {
-            SearchTable.DataSource = DbSearch.GetGrapeSortWithSugarOverAvr();
-            SearchTable.Update();
-            SearchTable.Refresh();
+            try
+            {
+                SearchTable.DataSource = DbSearch.GetGrapeSortWithSugarOverAvr();
+                SearchTable.Update();
+                SearchTable.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK);
+            }
+        }
+
+        private void ConnecToServerButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InitSqlManagers();
+                LoadAllData();
+                ConnecToServerButton.Enabled = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK);
+            }
         }
     }
 }
